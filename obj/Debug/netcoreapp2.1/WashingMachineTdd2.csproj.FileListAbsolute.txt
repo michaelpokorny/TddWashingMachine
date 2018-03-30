@@ -1,0 +1,13 @@
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\bin\Debug\netcoreapp2.1\WashingMachineTdd2.deps.json
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\bin\Debug\netcoreapp2.1\WashingMachineTdd2.runtimeconfig.json
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\bin\Debug\netcoreapp2.1\WashingMachineTdd2.runtimeconfig.dev.json
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\bin\Debug\netcoreapp2.1\WashingMachineTdd2.dll
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\bin\Debug\netcoreapp2.1\WashingMachineTdd2.pdb
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\obj\Debug\netcoreapp2.1\WashingMachineTdd2.csproj.CoreCompileInputs.cache
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\obj\Debug\netcoreapp2.1\WashingMachineTdd2.AssemblyInfoInputs.cache
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\obj\Debug\netcoreapp2.1\WashingMachineTdd2.AssemblyInfo.cs
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\obj\Debug\netcoreapp2.1\WashingMachineTdd2.dll
+C:\Users\xxpokorm\Desktop\Kata\WashingMachineTdd2\obj\Debug\netcoreapp2.1\WashingMachineTdd2.pdb
