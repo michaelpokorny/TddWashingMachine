@@ -11,3 +11,15 @@ obj/WashingMachine.csproj.nuget.g.targets
 obj/project.assets.json
 .vscode/tasks.json
 .vscode/launch.json
+bin/Debug/netcoreapp2.1/WashingMachine.pdb
+bin/Debug/netcoreapp2.1/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+bin/Debug/netcoreapp2.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+bin/Debug/netcoreapp2.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+bin/Debug/netcoreapp2.1/WashingMachine.dll
+bin/Debug/netcoreapp2.1/WashingMachine.deps.json
+bin/Debug/netcoreapp2.1/WashingMachine.runtimeconfig.json
+bin/Debug/netcoreapp2.1/WashingMachine.runtimeconfig.dev.json
+obj/WashingMachine.csproj.dotnetwatch.g.targets
+obj/Debug/netcoreapp2.1/WashingMachine.dll
+obj/Debug/netcoreapp2.1/WashingMachine.pdb
+obj/Debug/netcoreapp2.1/WashingMachine.csproj.FileListAbsolute.txt
