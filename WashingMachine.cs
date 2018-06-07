@@ -6,9 +6,9 @@ namespace WashingMachine
 	internal class WashingMachine
 	{
 		private bool _doorClosed;
-		private IDisplay _display;
+		private IMechanicalController _display;
 
-		public WashingMachine(IDisplay display)
+		public WashingMachine(IMechanicalController display)
 		{
 			_display = display;
 		}
@@ -24,6 +24,8 @@ namespace WashingMachine
 
 			if (!_doorClosed)
 				_display.SetOpenDoorIndicatorOff();
+			
+			_display.LockDoor();
 		}
 	}
 }

@@ -1,6 +1,6 @@
 namespace WashingMachine.TestDoubles
 {
-	class LoggingDisplay : IDisplay
+	class LoggingMechanicalController : IMechanicalController
 	{
 		private string _log = string.Empty;
 
@@ -12,6 +12,11 @@ namespace WashingMachine.TestDoubles
 		public void SetOpenDoorIndicatorOn()
 		{
 			_log += "[ODI=True]";
+		}
+
+		public void LockDoor()
+		{
+			_log += "[DoorLocked=True]";
 		}
 
 		public string GetLog()

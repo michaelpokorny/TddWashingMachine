@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WashingMachine.TestDoubles;
 
@@ -8,14 +9,14 @@ namespace WashingMachine
 	{
 		private const string ODI_FLASHED = "[ODI=True][ODI=False]";
 
-		LoggingDisplay _display;
+		LoggingMechanicalController _mechanicalController;
 		WashingMachine _machine;
 
 		[TestInitialize]
 		public void Initialize()
 		{
-			_display = new LoggingDisplay();
-			_machine = new WashingMachine(_display);
+			_mechanicalController = new LoggingMechanicalController();
+			_machine = new WashingMachine(_mechanicalController);
 		}
 
 		[TestMethod]
@@ -36,9 +37,19 @@ namespace WashingMachine
 			Assert.AreNotEqual(ODI_FLASHED, GetLog());
 		}
 
+		[TestMethod]
+		public void DoorLockedDuringRun()
+		{
+			_machine.SetDoorClosed();
+
+			_machine.Start();
+
+			StringAssert.Matches(GetLog(), new Regex(@"\[DoorLocked=True\]"));
+		}
+
 		private string GetLog()
 		{
-			return _display.GetLog();
+			return _mechanicalController.GetLog();
 		}
 	}
 }

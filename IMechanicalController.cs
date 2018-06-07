@@ -1,8 +1,9 @@
 namespace WashingMachine
 {
-	public interface IDisplay
+	public interface IMechanicalController
 	{
 		void SetOpenDoorIndicatorOn();
 		void SetOpenDoorIndicatorOff();
+		void LockDoor();
 	}
 }
