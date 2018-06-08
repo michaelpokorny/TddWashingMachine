@@ -51,11 +51,6 @@ namespace WashingMachine
 			StringAssert.EndsWith(GetLog(), "[DoorLocked=False]");
 		}
 
-		[TestMethod]
-		public void asdf()
-		{
-
-		}
 
 		private string GetLog()
 		{
