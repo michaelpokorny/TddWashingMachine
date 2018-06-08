@@ -5,5 +5,6 @@ namespace WashingMachine
 		void SetOpenDoorIndicatorOn();
 		void SetOpenDoorIndicatorOff();
 		void LockDoor();
+		void UnlockDoor();
 	}
 }

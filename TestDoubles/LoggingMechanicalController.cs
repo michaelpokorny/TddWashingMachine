@@ -18,10 +18,15 @@ namespace WashingMachine.TestDoubles
 		{
 			_log += "[DoorLocked=True]";
 		}
+		public void UnlockDoor()
+		{
+			_log += "[DoorLocked=False]";
+		}
 
 		public string GetLog()
 		{
 			return _log;
 		}
+
 	}
 }

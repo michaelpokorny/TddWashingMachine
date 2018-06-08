@@ -20,12 +20,18 @@ namespace WashingMachine
 
 		internal void Start()
 		{
-			_display.SetOpenDoorIndicatorOn();
-
 			if (!_doorClosed)
+			{
+				_display.SetOpenDoorIndicatorOn();
 				_display.SetOpenDoorIndicatorOff();
-			
-			_display.LockDoor();
+			}
+			else
+			{
+				_display.LockDoor();
+				_display.UnlockDoor();
+			}
+
+
 		}
 	}
 }
