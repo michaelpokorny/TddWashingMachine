@@ -23,8 +23,8 @@ namespace WashingMachine
 		public void DoorOpen_Start_FlashOdi()
 		{
 			_machine.Start();
-
-			Assert.AreEqual(ODI_FLASHED, GetLog());
+			
+			StringAssert.Matches(GetLog(), new Regex(@"\[ODI=True\].*\[ODI=False\]"));
 		}
 
 		[TestMethod]
