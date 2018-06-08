@@ -8,6 +8,9 @@ namespace WashingMachine
 	public class WashingMachineTest
 	{
 		private const string ODI_FLASHED = "[ODI=True][ODI=False]";
+		private readonly Regex _odiFlashPattern = new Regex(@"\[ODI=True\].*\[ODI=False\]");
+		// in the future this needs to 
+		// have a [SLEEP=1s] between flashes in order to make sure the lights are visibly flashed
 
 		LoggingMechanicalController _mechanicalController;
 		WashingMachine _machine;
@@ -24,7 +27,7 @@ namespace WashingMachine
 		{
 			Run();
 
-			StringAssert.Matches(GetLog(), new Regex(@"\[ODI=True\].*\[ODI=False\]"));
+			StringAssert.Matches(GetLog(), _odiFlashPattern);
 		}
 
 		[TestMethod]
@@ -44,7 +47,14 @@ namespace WashingMachine
 
 			Run();
 
-			StringAssert.Matches(GetLog(), new Regex(@"\[DoorLocked=True\]"));
+			StringAssert.StartsWith(GetLog(), "[DoorLocked=True]");
+			StringAssert.EndsWith(GetLog(), "[DoorLocked=False]");
+		}
+
+		[TestMethod]
+		public void asdf()
+		{
+
 		}
 
 		private string GetLog()
