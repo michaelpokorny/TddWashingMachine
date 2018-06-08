@@ -22,17 +22,17 @@ namespace WashingMachine
 		[TestMethod]
 		public void DoorOpen_Start_FlashOdi()
 		{
-			_machine.Start();
-			
+			Run();
+
 			StringAssert.Matches(GetLog(), new Regex(@"\[ODI=True\].*\[ODI=False\]"));
 		}
 
 		[TestMethod]
 		public void DoorClosed_Start_DontFlashOdi()
 		{
-			_machine.SetDoorClosed();
-			
-			_machine.Start();
+			CloseDoor();
+
+			Run();
 
 			Assert.AreNotEqual(ODI_FLASHED, GetLog());
 		}
@@ -40,9 +40,9 @@ namespace WashingMachine
 		[TestMethod]
 		public void DoorLockedDuringRun()
 		{
-			_machine.SetDoorClosed();
+			CloseDoor();
 
-			_machine.Start();
+			Run();
 
 			StringAssert.Matches(GetLog(), new Regex(@"\[DoorLocked=True\]"));
 		}
@@ -51,5 +51,17 @@ namespace WashingMachine
 		{
 			return _mechanicalController.GetLog();
 		}
+
+		private void Run()
+		{
+			_machine.Start();
+		}
+		
+		private void CloseDoor()
+		{
+			_machine.SetDoorClosed();
+		}
+
 	}
+	
 }
