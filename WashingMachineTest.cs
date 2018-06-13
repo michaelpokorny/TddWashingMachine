@@ -7,8 +7,7 @@ namespace WashingMachine
 	[TestClass]
 	public class WashingMachineTest
 	{
-		private const string ODI_FLASHED = "[ODI=True][Wait(1)][ODI=False]";
-		private readonly Regex _odiFlashPattern = new Regex(Regex.Escape(ODI_FLASHED));
+		private const string OPEN_DOOR_INDICATOR_FLASHED = "[OpenDoorIndicator=True][Wait(1)][OpenDoorIndicator=False]";
 		// in the future this needs to 
 		// have a [SLEEP=1s] between flashes in order to make sure the lights are visibly flashed
 
@@ -27,7 +26,7 @@ namespace WashingMachine
 		{
 			Run();
 
-			StringAssert.Matches(GetLog(), _odiFlashPattern);
+			StringAssert.Contains(GetLog(), OPEN_DOOR_INDICATOR_FLASHED);
 		}
 
 		[TestMethod]
@@ -37,7 +36,7 @@ namespace WashingMachine
 
 			Run();
 
-			Assert.AreNotEqual(ODI_FLASHED, GetLog());
+			Assert.AreNotEqual(OPEN_DOOR_INDICATOR_FLASHED, GetLog());
 		}
 
 		[TestMethod]

@@ -8,12 +8,12 @@ namespace WashingMachine.TestDoubles
 
 		public void SetOpenDoorIndicatorOff()
 		{
-			_log += "[ODI=False]";
+			_log += "[OpenDoorIndicator=False]";
 		}
 
 		public void SetOpenDoorIndicatorOn()
 		{
-			_log += "[ODI=True]";
+			_log += "[OpenDoorIndicator=True]";
 		}
 
 		public void LockDoor()
