@@ -29,6 +29,7 @@ namespace WashingMachine
 		private void FlashOpenDoorIndicator()
 		{
 			_mechanicalController.SetOpenDoorIndicatorOn();
+			_mechanicalController.Wait(TimeSpan.FromSeconds(1));
 			_mechanicalController.SetOpenDoorIndicatorOff();
 		}
 

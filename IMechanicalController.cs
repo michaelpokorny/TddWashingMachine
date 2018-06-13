@@ -1,3 +1,5 @@
+using System;
+
 namespace WashingMachine
 {
 	public interface IMechanicalController
@@ -6,5 +8,7 @@ namespace WashingMachine
 		void SetOpenDoorIndicatorOff();
 		void LockDoor();
 		void UnlockDoor();
+
+		void Wait(TimeSpan time);
 	}
 }

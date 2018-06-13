@@ -1,3 +1,5 @@
+using System;
+
 namespace WashingMachine.TestDoubles
 {
 	class LoggingMechanicalController : IMechanicalController
@@ -28,5 +30,9 @@ namespace WashingMachine.TestDoubles
 			return _log;
 		}
 
+		public void Wait(TimeSpan time)
+		{
+			_log += $"[Wait({time.TotalSeconds})]";
+		}
 	}
 }
