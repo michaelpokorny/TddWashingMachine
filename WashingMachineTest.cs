@@ -51,7 +51,7 @@ namespace WashingMachine
 		[TestMethod]
 		public void DefaultProgramHasCorrectOrder() {
 			Run();
-			StringAssert.Contains(GetLog(), "[GetWater=True]");
+			StringAssert.Contains(GetLog(), "[GetWater=True][WaitFor(WaterFilled=True)]");
 		//  - Wasser einlassen
 		// 	- Durchmischen(Drehen der Trommel mit niedriger Geschwindigkeit) [WaterIndicator=Full]
 		// 	- Wasser abpumpen
