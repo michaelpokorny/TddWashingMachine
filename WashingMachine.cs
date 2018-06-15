@@ -12,16 +12,6 @@ namespace WashingMachine
 			_mechanicalController = controller;
 		}
 
-		// internal void SetDoorClosed()
-		// {
-		// 	_doorClosed = true;
-		// }
-
-		// internal void SetDoorOpen()
-		// {
-		// 	_doorClosed = false;
-		// }
-
 		internal void Start()
 		{
 			if (GetDoorOpen())
@@ -45,7 +35,8 @@ namespace WashingMachine
 		private void Run()
 		{
 			_mechanicalController.LockDoor();
-			_mechanicalController.GetWater();
+			_mechanicalController.OpenWaterInjectionValve();
+			_mechanicalController.WaitForWashingDrumToBeFilledWithWater();
 			_mechanicalController.UnlockDoor();
 		}
 	}

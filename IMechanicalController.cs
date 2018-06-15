@@ -10,7 +10,8 @@ namespace WashingMachine
 		void UnlockDoor();
 
 		void Wait(TimeSpan time);
-		void GetWater();
+		void OpenWaterInjectionValve();
 		bool GetDoorOpen();
+		void WaitForWashingDrumToBeFilledWithWater();
 	}
 }

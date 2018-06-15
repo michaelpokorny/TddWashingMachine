@@ -31,9 +31,14 @@ namespace WashingMachine.TestDoubles
 			_log += $"[Wait({time.TotalSeconds})]";
 		}
 
-		public void GetWater()
+		public void WaitForWashingDrumToBeFilledWithWater()
 		{
-			_log += "[GetWater=True]";
+			_log += "[WaitFor(WashingDrumFilledWithWater=True)]";
+		}
+
+		public void OpenWaterInjectionValve()
+		{
+			_log += "[WaterInjectionValveOpened=True]";
 		}
 
 		public string GetLog()
