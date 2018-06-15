@@ -6,10 +6,12 @@ namespace WashingMachine
 	internal class WashingMachine
 	{
 		private IMechanicalController _mechanicalController;
+		private ISensorDataProvider _sensors;
 
-		public WashingMachine(IMechanicalController controller)
+		public WashingMachine(IMechanicalController controller, ISensorDataProvider sensors)
 		{
 			_mechanicalController = controller;
+			_sensors = sensors;
 		}
 
 		internal void Start()
@@ -22,7 +24,7 @@ namespace WashingMachine
 
 		private bool GetDoorOpen()
 		{
-			return _mechanicalController.GetDoorOpen();
+			return _sensors.GetDoorOpen();
 		}
 
 		private void FlashOpenDoorIndicator()
@@ -35,9 +37,14 @@ namespace WashingMachine
 		private void Run()
 		{
 			_mechanicalController.LockDoor();
+			FillWashingDrumWithWater();
+			_mechanicalController.UnlockDoor();
+		}
+
+		private void FillWashingDrumWithWater()
+		{
 			_mechanicalController.OpenWaterInjectionValve();
 			_mechanicalController.WaitForWashingDrumToBeFilledWithWater();
-			_mechanicalController.UnlockDoor();
 		}
 	}
 }
