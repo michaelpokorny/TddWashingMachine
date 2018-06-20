@@ -9,22 +9,20 @@ namespace WashingMachine
 	public class WashingMachineTest
 	{
 		private const string OPEN_DOOR_INDICATOR_FLASHED = "[OpenDoorIndicator=True][Wait(1)][OpenDoorIndicator=False]";
-		// in the future this needs to 
-		// have a [SLEEP=1s] between flashes in order to make sure the lights are visibly flashed
 
-		LoggingMechanicalController _mechanicalController;
 		WashingMachine _machine;
 		TestSensorDataProvider _sensors;
-		IWaiter _waiter;
 		private string _log;
 
 		[TestInitialize]
 		public void Initialize()
 		{
-			_mechanicalController = new LoggingMechanicalController(Log);
 			_sensors = new TestSensorDataProvider();
-			_waiter = new LoggingWaiter(Log);
-			_machine = new WashingMachine(_mechanicalController, _sensors, _waiter);
+			
+			_machine = new WashingMachine(
+				new LoggingMechanicalController(Log),
+				_sensors,
+				new LoggingWaiter(Log));
 		}
 
 		void Log(string message)
@@ -59,14 +57,15 @@ namespace WashingMachine
 		}
 
 		[TestMethod]
-		public void DefaultProgramHasCorrectOrder() {
+		public void DefaultProgramHasCorrectOrder()
+		{
 			Run();
 			StringAssert.Contains(GetLog(), "[WaterInjectionValveOpened=True][WaitFor(WashingDrumFilledWithWater=True)]");
-		//  - Wasser einlassen
-		// 	- Durchmischen(Drehen der Trommel mit niedriger Geschwindigkeit) [WaterIndicator=Full]
-		// 	- Wasser abpumpen
-		// 	- Schleudern(Drehen der Trommel mit hoher Geschwindigkeit)
-		// - Die Maschine darf in keinen Zustand gelangen, der eine weitere zweckmäßige Verwendung verhindert bzw. schwierig macht
+			//  - Wasser einlassen
+			// 	- Durchmischen(Drehen der Trommel mit niedriger Geschwindigkeit) [WaterIndicator=Full]
+			// 	- Wasser abpumpen
+			// 	- Schleudern(Drehen der Trommel mit hoher Geschwindigkeit)
+			// - Die Maschine darf in keinen Zustand gelangen, der eine weitere zweckmäßige Verwendung verhindert bzw. schwierig macht
 		}
 
 		private string GetLog()
