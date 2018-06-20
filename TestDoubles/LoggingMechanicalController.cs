@@ -5,7 +5,6 @@ namespace WashingMachine.TestDoubles
 	class LoggingMechanicalController : IMechanicalController
 	{
 		private string _log = string.Empty;
-		private bool _doorOpen;
 
 		public void SetOpenDoorIndicatorOff()
 		{
@@ -44,21 +43,6 @@ namespace WashingMachine.TestDoubles
 		public string GetLog()
 		{
 			return _log;
-		}
-
-		public bool GetDoorOpen()
-		{
-			return _doorOpen;
-		}
-
-		internal void SetDoorClosed()
-		{
-			_doorOpen = false;
-		}
-
-		internal void SetDoorOpen()
-		{
-			_doorOpen = true;
 		}
 	}
 }

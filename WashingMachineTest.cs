@@ -14,12 +14,14 @@ namespace WashingMachine
 
 		LoggingMechanicalController _mechanicalController;
 		WashingMachine _machine;
+		TestSensorDataProvider _sensors;
 
 		[TestInitialize]
 		public void Initialize()
 		{
 			_mechanicalController = new LoggingMechanicalController();
-			_machine = new WashingMachine(_mechanicalController);
+			_sensors = new TestSensorDataProvider();
+			_machine = new WashingMachine(_mechanicalController, _sensors);
 		}
 
 		[TestMethod]
@@ -71,7 +73,7 @@ namespace WashingMachine
 
 		private void OpenDoor()
 		{
-			_mechanicalController.SetDoorOpen();
+			_sensors.SetDoorOpen();
 		}
 	}
 }
