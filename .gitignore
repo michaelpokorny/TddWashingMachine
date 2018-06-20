@@ -24,3 +24,4 @@ obj/Debug/netcoreapp2.1/WashingMachine.dll
 obj/Debug/netcoreapp2.1/WashingMachine.pdb
 obj/Debug/netcoreapp2.1/WashingMachine.csproj.FileListAbsolute.txt
 obj/Debug/netcoreapp2.1/WashingMachine.csprojResolveAssemblyReference.cache
+.vs/slnx.sqlite

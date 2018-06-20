@@ -18,6 +18,5 @@ namespace WashingMachine.TestDoubles
 		{
 			_doorOpen = true;
 		}
-
 	}
 }

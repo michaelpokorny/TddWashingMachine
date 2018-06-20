@@ -7,11 +7,13 @@ namespace WashingMachine
 	{
 		private IMechanicalController _mechanicalController;
 		private ISensorDataProvider _sensors;
+		private IWaiter _waiter;
 
-		public WashingMachine(IMechanicalController controller, ISensorDataProvider sensors)
+		public WashingMachine(IMechanicalController controller, ISensorDataProvider sensors, IWaiter waiter)
 		{
 			_mechanicalController = controller;
 			_sensors = sensors;
+			_waiter = waiter;
 		}
 
 		internal void Start()
@@ -30,7 +32,7 @@ namespace WashingMachine
 		private void FlashOpenDoorIndicator()
 		{
 			_mechanicalController.SetOpenDoorIndicatorOn();
-			_mechanicalController.Wait(TimeSpan.FromSeconds(1));
+			_waiter.Wait(TimeSpan.FromSeconds(1));
 			_mechanicalController.SetOpenDoorIndicatorOff();
 		}
 

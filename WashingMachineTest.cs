@@ -15,13 +15,21 @@ namespace WashingMachine
 		LoggingMechanicalController _mechanicalController;
 		WashingMachine _machine;
 		TestSensorDataProvider _sensors;
+		IWaiter _waiter;
+		private string _log;
 
 		[TestInitialize]
 		public void Initialize()
 		{
-			_mechanicalController = new LoggingMechanicalController();
+			_mechanicalController = new LoggingMechanicalController(Log);
 			_sensors = new TestSensorDataProvider();
-			_machine = new WashingMachine(_mechanicalController, _sensors);
+			_waiter = new LoggingWaiter(Log);
+			_machine = new WashingMachine(_mechanicalController, _sensors, _waiter);
+		}
+
+		void Log(string message)
+		{
+			_log += message;
 		}
 
 		[TestMethod]
@@ -63,7 +71,7 @@ namespace WashingMachine
 
 		private string GetLog()
 		{
-			return _mechanicalController.GetLog();
+			return _log;
 		}
 
 		private void Run()
