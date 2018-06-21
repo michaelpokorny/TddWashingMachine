@@ -47,6 +47,7 @@ namespace WashingMachine
 		{
 			_mechanicalController.OpenWaterInjectionValve();
 			_mechanicalController.WaitForWashingDrumToBeFilledWithWater();
+			_mechanicalController.CloseWaterInjectionValve();
 		}
 	}
 }

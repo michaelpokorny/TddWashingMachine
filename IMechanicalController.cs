@@ -7,10 +7,10 @@ namespace WashingMachine
 		void SetOpenDoorIndicatorOn();
 		void SetOpenDoorIndicatorOff();
 		void LockDoor();
-		void OpenWaterInjectionValve();
 		void UnlockDoor();
+		void OpenWaterInjectionValve();
+		void CloseWaterInjectionValve();
 
-		void Wait(TimeSpan time);
 		void WaitForWashingDrumToBeFilledWithWater();
 	}
 }

@@ -44,5 +44,10 @@ namespace WashingMachine.TestDoubles
 		{
 			_log("[WaterInjectionValveOpened=True]");
 		}
+
+		public void CloseWaterInjectionValve()
+		{
+			_log("[WaterInjectionValveOpened=False]");
+		}
 	}
 }

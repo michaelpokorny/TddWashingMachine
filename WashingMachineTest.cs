@@ -60,7 +60,7 @@ namespace WashingMachine
 		public void DefaultProgramHasCorrectOrder()
 		{
 			Run();
-			StringAssert.Contains(GetLog(), "[WaterInjectionValveOpened=True][WaitFor(WashingDrumFilledWithWater=True)]");
+			StringAssert.Contains(GetLog(), "[WaterInjectionValveOpened=True][WaitFor(WashingDrumFilledWithWater=True)][WaterInjectionValveOpened=False]");
 			//  - Wasser einlassen
 			// 	- Durchmischen(Drehen der Trommel mit niedriger Geschwindigkeit) [WaterIndicator=Full]
 			// 	- Wasser abpumpen

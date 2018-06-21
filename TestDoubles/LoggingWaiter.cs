@@ -16,6 +16,12 @@ namespace WashingMachine.TestDoubles
 			_log($"[Wait({time.TotalSeconds})]");
 		}
 
+		public void WaitForTrue(Func<bool> getValue)
+		{
+			_log($"[WaitForTrue({getValue.Target.GetType()})]");
+
+		}
+
 		public void WaitForWashingDrumToBeFilledWithWater()
 		{
 			_log("[WaitFor(WashingDrumFilledWithWater=True)]");
