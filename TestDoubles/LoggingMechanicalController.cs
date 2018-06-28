@@ -49,5 +49,10 @@ namespace WashingMachine.TestDoubles
 		{
 			_log("[WaterInjectionValveOpened=False]");
 		}
+
+		public void StartSpinningSlowly()
+		{
+			_log("[SpinSlowly=True]");
+		} 
 	}
 }

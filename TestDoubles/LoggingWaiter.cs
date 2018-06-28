@@ -18,7 +18,7 @@ namespace WashingMachine.TestDoubles
 
 		public void WaitForTrue(Func<bool> getValue)
 		{
-			_log($"[WaitForTrue({getValue.Target.GetType()})]");
+			_log($"[WaitForTrue({getValue.Method.Name})]");
 
 		}
 

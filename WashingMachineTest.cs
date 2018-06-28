@@ -18,7 +18,7 @@ namespace WashingMachine
 		public void Initialize()
 		{
 			_sensors = new TestSensorDataProvider();
-			
+
 			_machine = new WashingMachine(
 				new LoggingMechanicalController(Log),
 				_sensors,
@@ -60,13 +60,18 @@ namespace WashingMachine
 		public void DefaultProgramHasCorrectOrder()
 		{
 			Run();
-			StringAssert.Contains(GetLog(), "[WaterInjectionValveOpened=True][WaitFor(WashingDrumFilledWithWater=True)][WaterInjectionValveOpened=False]");
-			//  - Wasser einlassen
+			StringAssert.Contains(GetLog(), "[WaterInjectionValveOpened=True]"
+				+ "[WaitFor(WashingDrumFilledWithWater=True)]"
+				+ "[WaterInjectionValveOpened=False]"
+				+ "[SpinSlowly=True]"
+				);
 			// 	- Durchmischen(Drehen der Trommel mit niedriger Geschwindigkeit) [WaterIndicator=Full]
 			// 	- Wasser abpumpen
 			// 	- Schleudern(Drehen der Trommel mit hoher Geschwindigkeit)
 			// - Die Maschine darf in keinen Zustand gelangen, der eine weitere zweckmäßige Verwendung verhindert bzw. schwierig macht
 		}
+
+
 
 		private string GetLog()
 		{

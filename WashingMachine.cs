@@ -40,6 +40,7 @@ namespace WashingMachine
 		{
 			_mechanicalController.LockDoor();
 			FillWashingDrumWithWater();
+			_mechanicalController.StartSpinningSlowly();
 			_mechanicalController.UnlockDoor();
 		}
 

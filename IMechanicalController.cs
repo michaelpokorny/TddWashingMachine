@@ -10,7 +10,7 @@ namespace WashingMachine
 		void UnlockDoor();
 		void OpenWaterInjectionValve();
 		void CloseWaterInjectionValve();
-
+		void StartSpinningSlowly();
 		void WaitForWashingDrumToBeFilledWithWater();
 	}
 }
