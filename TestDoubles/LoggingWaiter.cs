@@ -2,29 +2,26 @@ using System;
 
 namespace WashingMachine.TestDoubles
 {
-	internal class LoggingWaiter : IWaiter
-	{
-		private Action<string> _log;
-
-		public LoggingWaiter(Action<string> log)
+	internal class LoggingWaiter : LoggingDouble, IWaiter
+{
+		public LoggingWaiter(Action<string> log) : base(log)
 		{
-			_log = log;
 		}
 
 		public void Wait(TimeSpan time)
 		{
-			_log($"[Wait({time.TotalSeconds})]");
+			Log($"[Wait({time.TotalSeconds})]");
 		}
 
 		public void WaitForTrue(Func<bool> getValue)
 		{
-			_log($"[WaitForTrue({getValue.Method.Name})]");
+			Log($"[WaitForTrue({getValue.Method.Name})]");
 
 		}
 
 		public void WaitForWashingDrumToBeFilledWithWater()
 		{
-			_log("[WaitFor(WashingDrumFilledWithWater=True)]");
+			Log("[WaitFor(WashingDrumFilledWithWater=True)]");
 		}
 	}
 }
