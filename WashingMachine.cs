@@ -41,7 +41,13 @@ namespace WashingMachine
 			_mechanicalController.LockDoor();
 			FillWashingDrumWithWater();
 			SpinSlowly();
+			StartWaterPump();
 			_mechanicalController.UnlockDoor();
+		}
+
+		private void StartWaterPump()
+		{
+			_mechanicalController.StartWaterPump();
 		}
 
 		private void FillWashingDrumWithWater()

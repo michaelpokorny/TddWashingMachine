@@ -12,5 +12,6 @@ namespace WashingMachine
 		void CloseWaterInjectionValve();
 		void StartSpinningSlowly();
 		void StopSpinningSlowly();
+		void StartWaterPump();
 	}
 }
