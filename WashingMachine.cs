@@ -54,6 +54,7 @@ namespace WashingMachine
 		private void SpinSlowly()
 		{
 			_mechanicalController.StartSpinningSlowly();
+			_waiter.Wait(TimeSpan.FromSeconds(600));
 			_mechanicalController.StopSpinningSlowly();
 		}
 	}
