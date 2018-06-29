@@ -42,7 +42,13 @@ namespace WashingMachine
 			FillWashingDrumWithWater();
 			SpinSlowly();
 			StartWaterPump();
+			SpinFast();
 			_mechanicalController.UnlockDoor();
+		}
+
+		private void SpinFast()
+		{
+			_mechanicalController.StartSpinningFast();
 		}
 
 		private void StartWaterPump()
