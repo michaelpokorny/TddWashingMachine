@@ -64,8 +64,9 @@ namespace WashingMachine
 				+ "[WaitFor(WashingDrumFilledWithWater=True)]"
 				+ "[WaterInjectionValveOpened=False]"
 				+ "[SpinSlowly=True]"
+				+ "[SpinSlowly=False]"
 				);
-			// 	- Durchmischen(Drehen der Trommel mit niedriger Geschwindigkeit) [WaterIndicator=Full]
+			// 	- Durchmischen(Drehen der Trommel mit niedriger Geschwindigkeit)
 			// 	- Wasser abpumpen
 			// 	- Schleudern(Drehen der Trommel mit hoher Geschwindigkeit)
 			// - Die Maschine darf in keinen Zustand gelangen, der eine weitere zweckmäßige Verwendung verhindert bzw. schwierig macht

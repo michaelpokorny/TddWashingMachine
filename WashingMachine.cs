@@ -40,7 +40,7 @@ namespace WashingMachine
 		{
 			_mechanicalController.LockDoor();
 			FillWashingDrumWithWater();
-			_mechanicalController.StartSpinningSlowly();
+			SpinSlowly();
 			_mechanicalController.UnlockDoor();
 		}
 
@@ -49,6 +49,12 @@ namespace WashingMachine
 			_mechanicalController.OpenWaterInjectionValve();
 			_waiter.WaitForWashingDrumToBeFilledWithWater();
 			_mechanicalController.CloseWaterInjectionValve();
+		}
+
+		private void SpinSlowly()
+		{
+			_mechanicalController.StartSpinningSlowly();
+			_mechanicalController.StopSpinningSlowly();
 		}
 	}
 }

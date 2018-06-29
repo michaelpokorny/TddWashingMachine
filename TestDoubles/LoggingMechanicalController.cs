@@ -41,5 +41,10 @@ namespace WashingMachine.TestDoubles
 		{
 			Log("[SpinSlowly=True]");
 		}
+
+		public void StopSpinningSlowly()
+		{
+			Log("[SpinSlowly=False]");
+		}
 	}
 }
