@@ -21,7 +21,7 @@ namespace WashingMachine
 			if (GetDoorOpen())
 				FlashOpenDoorIndicator();
 			else
-				Run();
+				RunProgram();
 		}
 
 		private bool GetDoorOpen()
@@ -36,7 +36,7 @@ namespace WashingMachine
 			_mechanicalController.SetOpenDoorIndicatorOff();
 		}
 
-		private void Run()
+		private void RunProgram()
 		{
 			_mechanicalController.LockDoor();
 			FillWashingDrumWithWater();

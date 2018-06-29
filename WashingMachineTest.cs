@@ -67,6 +67,7 @@ namespace WashingMachine
 				+ "[Wait(600)]"
 				+ "[SpinSlowly=False]"
 				+ "[StartWaterPump=True]"
+				+ "[SpinFast=True]"
 				);
 			// 	- Durchmischen(Drehen der Trommel mit niedriger Geschwindigkeit)
 			// 	- Wasser abpumpen
