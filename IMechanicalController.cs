@@ -15,5 +15,6 @@ namespace WashingMachine
 		void StartSpinningFast();
 		void StartWaterPump();
 		void StopSpinningFast();
+		void StopWaterPump();
 	}
 }

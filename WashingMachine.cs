@@ -43,6 +43,7 @@ namespace WashingMachine
 			SpinSlowly();
 			StartWaterPump();
 			SpinFast();
+			StopWaterPumpWhenDrumEmptyOfWater();
 			_mechanicalController.UnlockDoor();
 		}
 
@@ -52,12 +53,7 @@ namespace WashingMachine
 			_waiter.Wait(TimeSpan.FromSeconds(60));
 			_mechanicalController.StopSpinningFast();
 		}
-
-		private void StartWaterPump()
-		{
-			_mechanicalController.StartWaterPump();
-		}
-
+		
 		private void FillWashingDrumWithWater()
 		{
 			_mechanicalController.OpenWaterInjectionValve();
@@ -71,5 +67,17 @@ namespace WashingMachine
 			_waiter.Wait(TimeSpan.FromSeconds(600));
 			_mechanicalController.StopSpinningSlowly();
 		}
+
+		private void StartWaterPump()
+		{
+			_mechanicalController.StartWaterPump();
+		}
+
+		private void StopWaterPumpWhenDrumEmptyOfWater()
+		{
+			_waiter.WaitForWashingDrumToBeEmptyOfWater();
+			_mechanicalController.StopWaterPump();
+		}
+
 	}
 }

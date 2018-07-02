@@ -6,6 +6,6 @@ namespace WashingMachine
 	{
 		void Wait(TimeSpan time);
 		void WaitForWashingDrumToBeFilledWithWater();
-		void WaitForTrue(Func<bool> getValue);
+		void WaitForWashingDrumToBeEmptyOfWater();
 	}
 }

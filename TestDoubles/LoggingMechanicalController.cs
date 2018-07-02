@@ -54,12 +54,17 @@ namespace WashingMachine.TestDoubles
 
 		public void StartWaterPump()
 		{
-			Log("[StartWaterPump=True]");
+			Log("[WaterPumpPumping=True]");
 		}
 
 		public void StopSpinningFast()
 		{
 			Log("[SpinFast=False]");
+		}
+
+		public void StopWaterPump()
+		{
+			Log("[WaterPumpPumping=False]");
 		}
 	}
 }

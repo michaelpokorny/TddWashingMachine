@@ -66,10 +66,12 @@ namespace WashingMachine
 				+ "[SpinSlowly=True]"
 				+ "[Wait(600)]"
 				+ "[SpinSlowly=False]"
-				+ "[StartWaterPump=True]"
+				+ "[WaterPumpPumping=True]"
 				+ "[SpinFast=True]"
 				+ "[Wait(60)]"
 				+ "[SpinFast=False]"
+				+ "[WaitFor(NoWaterInDrum=True)]"
+				+ "[WaterPumpPumping=False]"
 				);
 			// 	- Wasser abpumpen
 			// - Die Maschine darf in keinen Zustand gelangen, der eine weitere zweckmäßige Verwendung verhindert bzw. schwierig macht

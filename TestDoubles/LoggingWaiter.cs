@@ -3,7 +3,7 @@ using System;
 namespace WashingMachine.TestDoubles
 {
 	internal class LoggingWaiter : LoggingDouble, IWaiter
-{
+	{
 		public LoggingWaiter(Action<string> log) : base(log)
 		{
 		}
@@ -13,10 +13,9 @@ namespace WashingMachine.TestDoubles
 			Log($"[Wait({time.TotalSeconds})]");
 		}
 
-		public void WaitForTrue(Func<bool> getValue)
+		public void WaitForWashingDrumToBeEmptyOfWater()
 		{
-			Log($"[WaitForTrue({getValue.Method.Name})]");
-
+			Log("[WaitFor(NoWaterInDrum=True)]");
 		}
 
 		public void WaitForWashingDrumToBeFilledWithWater()
