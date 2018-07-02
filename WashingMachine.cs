@@ -49,6 +49,8 @@ namespace WashingMachine
 		private void SpinFast()
 		{
 			_mechanicalController.StartSpinningFast();
+			_waiter.Wait(TimeSpan.FromSeconds(60));
+			_mechanicalController.StopSpinningFast();
 		}
 
 		private void StartWaterPump()
